@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
+    "clsx": "^1.2.1",
     "eslint-config-prettier": "^8.8.0",
     "next": "13.4.4",
     "postcss": "8.4.24",
@@ -26,6 +27,7 @@
     "@types/react-dom": "18.2.4",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
+    "prettier-plugin-tailwindcss": "^0.3.0",
     "rimraf": "^5.0.1"
   }
 }
