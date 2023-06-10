@@ -1,0 +1,7 @@
+package.json
+**/*.yaml
+.vscode
+.idea
+dist
+build
+.next
