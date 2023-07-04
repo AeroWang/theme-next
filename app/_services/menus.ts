@@ -1,6 +1,6 @@
-import { haloFetch } from '#/app/services/base'
-import { HALO_API_PATH } from '#/app/dicts/haloApiPath'
-import { MenuRes } from '#/app/types/data'
+import { haloFetch } from '#/app/_services/base'
+import { HALO_API_PATH } from '#/app/_dicts/haloApiPath'
+import { MenuRes } from '#/app/_types/data'
 
 // import querystring from 'querystring'
 
