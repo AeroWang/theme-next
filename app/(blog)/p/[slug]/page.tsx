@@ -1,5 +1,5 @@
 import React from 'react'
-import '#/assets/style/prism-one-dark.css'
+// import '#/assets/style/prism-one-dark.css'
 
 type Props = {
   params: { slug: string }

@@ -7,6 +7,9 @@ module.exports = {
   ],
   darkMode: ['class', '[data-theme="dark"]'],
   theme: {
+    colors: {
+      primary: 'var(--color-primary)'
+    },
     extend: {
       height: {
         13: '3.125rem'

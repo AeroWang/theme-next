@@ -1,4 +1,4 @@
-import '../globals.css'
+import '#/app/globals.css'
 import { ThemesProvider } from '#/app/_components/ThemeProviders'
 import GlobalNav from '#/app/(blog)/_components/nav'
 

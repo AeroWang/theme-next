@@ -14,7 +14,7 @@ const GlobalNav = async () => {
     <NavContainer>
       <div className="flex h-full justify-between px-3 xl:mx-auto xl:max-w-screen-2xl">
         <div className="left flex">
-          <Link className="logo mr-5 flex h-full w-16 items-center text-xl font-bold italic" href="/">
+          <Link className="logo mr-5 flex h-full w-16 items-center text-xl font-bold italic text-primary" href="/">
             Aero
           </Link>
           <nav className="">
