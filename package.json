@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@aerowang/react-iconfont-cli": "^2.0.5",
-    "@types/node": "20.3.3",
+    "@types/node": "20.4.0",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "eslint": "8.44.0",
