@@ -4,6 +4,7 @@
 
 @layer base {
   @keyframes rainbow {
+    /*TODO: 是否需要重新制定？*/
     0% {
       --color-primary: #00a98e;
       --color-primary-light: #4ad1b4;
@@ -741,5 +742,10 @@
     --color-primary-darker: #005d47;
     --color-primary-next: #009ff7;
     animation: rainbow 30s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      animation: none !important;
+    }
   }
 }

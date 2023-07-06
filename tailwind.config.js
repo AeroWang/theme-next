@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  presets: [require('./tailwind-preset')],
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,15 +8,16 @@ module.exports = {
   ],
   darkMode: ['class', '[data-theme="dark"]'],
   theme: {
-    colors: {
-      primary: 'var(--color-primary)'
-    },
     extend: {
-      height: {
-        13: '3.125rem'
+      colors: {
+        primary: 'var(--color-primary)'
       },
-      padding: {
-        13: '3.125rem'
+      screens: {
+        '4xl': '2560px'
+      },
+      transitionProperty: {
+        opacity: 'opacity, visibility',
+        'max-height': 'max-height'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
