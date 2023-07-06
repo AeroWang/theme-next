@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -24,8 +24,8 @@ dependencies:
     specifier: 8.4.24
     version: 8.4.24
   prettier:
-    specifier: ^2.8.8
-    version: 2.8.8
+    specifier: ^3.0.0
+    version: 3.0.0
   query-string:
     specifier: ^8.1.0
     version: 8.1.0
@@ -45,7 +45,7 @@ dependencies:
 devDependencies:
   '@aerowang/react-iconfont-cli':
     specifier: ^2.0.5
-    version: registry.npmjs.org/@aerowang/react-iconfont-cli@2.0.5(react@18.2.0)
+    version: 2.0.5(react@18.2.0)
   '@types/node':
     specifier: 20.3.3
     version: 20.3.3
@@ -66,12 +66,30 @@ devDependencies:
     version: 11.1.1
   prettier-plugin-tailwindcss:
     specifier: ^0.3.0
-    version: 0.3.0(prettier@2.8.8)
+    version: 0.3.0(prettier@3.0.0)
   rimraf:
     specifier: ^5.0.1
     version: 5.0.1
 
 packages:
+
+  /@aerowang/react-iconfont-cli@2.0.5(react@18.2.0):
+    resolution: {integrity: sha512-A9/NUwMAkz6VPQG58XDEq6Qv4USZtqTOlev4o3FpcE8jPNcETXbShYpPk3iwKgrt4yoL4LbxOGmXD4vOz7QZFA==}
+    hasBin: true
+    peerDependencies:
+      react: '*'
+    dependencies:
+      colors: 1.4.0
+      glob: 7.2.3
+      iconfont-parser: 1.0.0
+      lodash: 4.17.21
+      minimist: 1.2.8
+      mkdirp: 0.5.6
+      react: 18.2.0
+      tslib: 1.14.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@alloc/quick-lru@5.2.0:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
@@ -2355,7 +2373,7 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  /prettier-plugin-tailwindcss@0.3.0(prettier@2.8.8):
+  /prettier-plugin-tailwindcss@0.3.0(prettier@3.0.0):
     resolution: {integrity: sha512-009/Xqdy7UmkcTBpwlq7jsViDqXAYSOMLDrHAdTMlVZOrKfM2o9Ci7EMWTMZ7SkKBFTG04UM9F9iM2+4i6boDA==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
@@ -2407,12 +2425,12 @@ packages:
       prettier-plugin-twig-melody:
         optional: true
     dependencies:
-      prettier: 2.8.8
+      prettier: 3.0.0
     dev: true
 
-  /prettier@2.8.8:
-    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
-    engines: {node: '>=10.13.0'}
+  /prettier@3.0.0:
+    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+    engines: {node: '>=14'}
     hasBin: true
 
   /prop-types@15.8.1:
@@ -3023,24 +3041,3 @@ packages:
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
     dev: false
-
-  registry.npmjs.org/@aerowang/react-iconfont-cli@2.0.5(react@18.2.0):
-    resolution: {integrity: sha512-A9/NUwMAkz6VPQG58XDEq6Qv4USZtqTOlev4o3FpcE8jPNcETXbShYpPk3iwKgrt4yoL4LbxOGmXD4vOz7QZFA==, registry: https://registry.npmmirror.com/, tarball: https://registry.npmjs.org/@aerowang/react-iconfont-cli/-/react-iconfont-cli-2.0.5.tgz}
-    id: registry.npmjs.org/@aerowang/react-iconfont-cli/2.0.5
-    name: '@aerowang/react-iconfont-cli'
-    version: 2.0.5
-    hasBin: true
-    peerDependencies:
-      react: '*'
-    dependencies:
-      colors: 1.4.0
-      glob: 7.2.3
-      iconfont-parser: 1.0.0
-      lodash: 4.17.21
-      minimist: 1.2.8
-      mkdirp: 0.5.6
-      react: 18.2.0
-      tslib: 1.14.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
