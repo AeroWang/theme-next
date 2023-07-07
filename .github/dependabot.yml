@@ -9,7 +9,10 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
-    # ignore:
+    ignore:
+      # For prettier, ignore all updates
+      - dependency-name: "prettier"
+        versions: ["3.x"]
     #   - dependency-name: "express"
     #     # For Express, ignore all updates for version 4 and 5
     #     versions: ["4.x", "5.x"]
