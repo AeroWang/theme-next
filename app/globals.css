@@ -748,4 +748,7 @@
       animation: none !important;
     }
   }
+  body{
+    -webkit-tap-highlight-color: transparent;
+  }
 }

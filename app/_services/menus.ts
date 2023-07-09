@@ -12,7 +12,11 @@ export async function getMenu(): Promise<MenuRes | undefined> {
 
 export async function getMenuByName(name?: string): Promise<MenuRes | undefined> {
   const queryName = name ? name : 'primary'
-  const res = await haloFetch(`${HALO_API_PATH.menuByName}/${queryName}`)
+  const res = await haloFetch(`${HALO_API_PATH.menuByName}/${queryName}`, {
+    next: {
+      revalidate: 60,
+    },
+  })
   if (!res.ok) return undefined
   return res.json()
 }

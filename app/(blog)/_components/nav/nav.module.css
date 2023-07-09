@@ -1,0 +1,48 @@
+.header-menu {
+  @apply relative flex h-11 px-1 items-center justify-center md:hidden;
+  transition: 0.2s ease-in-out;
+  will-change: transform;
+  :global{
+    .bars {
+      position: relative;
+      &,
+      &:before,
+      &:after {
+        width: 1.5rem;
+        height: 0.125rem;
+        border-radius: 0.25rem;
+        transition: 0.2s ease-in-out;
+        box-sizing: border-box;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        will-change: transform;
+      }
+
+      &:before {
+        transform: translate3d(0,calc(-0.25rem * 2),0);
+      }
+
+      &:after {
+        transform: translate3d(0,calc(0.25rem * 2),0);
+      }
+    }
+  }
+  &:global(.active) {
+    transform: rotate3d(0,0,1,-45deg);
+    :global{
+      .bars {
+        &:before,
+        &:after {
+          transform: translate3d(0,0,0) rotate3d(0,0,1,-90deg);
+        }
+      }
+    }
+  }
+}
