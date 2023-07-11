@@ -8,10 +8,13 @@ import nav from '#/app/(blog)/_components/nav/index'
 import ThemeSwitch from '#/app/_components/ThemeSwitch'
 import IconSearch from '#/app/_components/SvgIcons/IconSearch'
 import { GlobalWidthContext } from '#/app/_components/Providers/GlobalSizeProvider'
+import { useSelectedLayoutSegments } from 'next/navigation'
+import { GlobalScrollContext } from '#/app/_components/Providers/GlobalScrollProvider'
 
 export default function NavContainer({ children }: { children: React.ReactNode }) {
-  // const { top: globalScrollTop } = useContext(GlobalScrollContext)
+  const { top: globalScrollTop } = useContext(GlobalScrollContext)
   const { width: globalWidth = 0 } = useContext(GlobalWidthContext)
+  const segments = useSelectedLayoutSegments()
   const [isOpen, toggleState] = useState(false)
 
   const navRef = useRef<HTMLDivElement>(null)
@@ -20,6 +23,12 @@ export default function NavContainer({ children }: { children: React.ReactNode }
   useEffect(() => {
     clientHeight.current = window.innerHeight || document.documentElement.clientHeight
   }, [])
+
+  const [bannerBoxHeight, setBannerHeight] = useState(0)
+  useEffect(() => {
+    const height = document.getElementById('head-banner')?.offsetHeight
+    if (height) setBannerHeight(height)
+  }, [segments])
 
   const menuClick = useCallback(() => {
     if (globalWidth >= 768) return
@@ -65,7 +74,11 @@ export default function NavContainer({ children }: { children: React.ReactNode }
   }
   return (
     <>
-      <header className="fixed left-0 top-0 z-50 h-13 w-full border-b border-gray-4 bg-gray-1 text-black dark:border-gray-9 dark:bg-gray-12 dark:text-white-85 md:h-14">
+      <header
+        className={clsx(
+          'fixed left-0 top-0 z-50 h-13 w-full border-b border-gray-4 bg-transparent text-black dark:border-gray-9 dark:text-white-85 md:h-14',
+          globalScrollTop > bannerBoxHeight - 56 ? '!bg-gray-1 dark:!bg-gray-12' : '',
+        )}>
         <div className="relative flex h-full justify-between px-3 xl:mx-auto xl:max-w-screen-2xl">
           <div className="left h-full md:flex">
             <Link className="logo mr-5 flex h-full w-16 items-center text-xl font-bold italic text-primary" href="/">
