@@ -1,13 +1,13 @@
 'use client'
 
 import { useCallback, useContext, useEffect, useRef, useState } from 'react'
-import { GlobalWidthContext } from '#/app/_components/MyProviders'
 import Link from 'next/link'
 import clsx from 'clsx'
 import styles from '#/app/(blog)/_components/nav/nav.module.css'
 import nav from '#/app/(blog)/_components/nav/index'
 import ThemeSwitch from '#/app/_components/ThemeSwitch'
 import IconSearch from '#/app/_components/SvgIcons/IconSearch'
+import { GlobalWidthContext } from '#/app/_components/Providers/GlobalSizeProvider'
 
 export default function NavContainer({ children }: { children: React.ReactNode }) {
   // const { top: globalScrollTop } = useContext(GlobalScrollContext)

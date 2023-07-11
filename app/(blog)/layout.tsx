@@ -1,6 +1,8 @@
 import '#/app/globals.css'
 import GlobalNav from '#/app/(blog)/_components/nav'
-import MyProviders from '#/app/_components/MyProviders'
+import { ThemesProvider } from '#/app/_components/Providers/ThemesProvider'
+import GlobalScrollProvider from '#/app/_components/Providers/GlobalScrollProvider'
+import GlobalSizeProvider from '#/app/_components/Providers/GlobalSizeProvider'
 
 export const metadata = {
   title: {
@@ -35,14 +37,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning lang="zh">
       <body className="h-[2000px] bg-gray-3 transition-colors duration-100 ease-linear dark:bg-gray-13">
-        <MyProviders>
-          <>
-            <GlobalNav />
-            {/*<main className={'pt-13 flex w-full flex-1 flex-col pb-20 md:pt-0'}>{children}</main>*/}
-            <main className={'flex w-full flex-1 flex-col pb-20 pt-13 md:pt-14'}>{children}</main>
-            {/*<GlobalFooter />*/}
-          </>
-        </MyProviders>
+        <ThemesProvider>
+          <GlobalScrollProvider>
+            <GlobalSizeProvider>
+              <>
+                <GlobalNav />
+                <main className={'flex w-full flex-1 flex-col pb-20 pt-13 md:pt-14'}>{children}</main>
+                {/*<GlobalFooter />*/}
+              </>
+            </GlobalSizeProvider>
+          </GlobalScrollProvider>
+        </ThemesProvider>
       </body>
     </html>
   )
