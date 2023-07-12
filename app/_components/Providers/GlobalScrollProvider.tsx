@@ -9,7 +9,7 @@ export default function GlobalScrollProvider({ children }: { children: React.Rea
   const bodyScroll = useScroll(() => document)
 
   return (
-    <GlobalScrollContext.Provider value={bodyScroll ? bodyScroll : { left: 0, top: 0 }}>
+    <GlobalScrollContext.Provider value={bodyScroll ? bodyScroll : { left: 0, top: -1000 }}>
       {children}
     </GlobalScrollContext.Provider>
   )
