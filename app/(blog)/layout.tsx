@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <GlobalSizeProvider>
               <>
                 <GlobalNav />
-                <main className={'flex w-full flex-1 flex-col pb-20 pt-13 md:pt-14'}>{children}</main>
+                <main className={'flex w-full flex-1 flex-col pb-20'}>{children}</main>
                 {/*<GlobalFooter />*/}
               </>
             </GlobalSizeProvider>

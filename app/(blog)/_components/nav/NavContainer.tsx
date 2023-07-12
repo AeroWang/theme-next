@@ -13,9 +13,10 @@ import { GlobalScrollContext } from '#/app/_components/Providers/GlobalScrollPro
 
 export default function NavContainer({ children }: { children: React.ReactNode }) {
   const { top: globalScrollTop } = useContext(GlobalScrollContext)
-  const { width: globalWidth = 0 } = useContext(GlobalWidthContext)
+  const { width: globalWidth } = useContext(GlobalWidthContext)
   const segments = useSelectedLayoutSegments()
   const [isOpen, toggleState] = useState(false)
+  const [interruptScrollTop, setInterruptScrollTop] = useState(0)
 
   const navRef = useRef<HTMLDivElement>(null)
   const clientHeight = useRef(0)
@@ -72,12 +73,21 @@ export default function NavContainer({ children }: { children: React.ReactNode }
     if (!aLink) return
     menuClick()
   }
+
+  useEffect(() => {
+    if (globalWidth <= 768) {
+      setInterruptScrollTop(0)
+    } else setInterruptScrollTop(globalScrollTop)
+  }, [globalScrollTop, globalWidth])
+
   return (
     <>
       <header
         className={clsx(
-          'fixed left-0 top-0 z-50 h-13 w-full border-b border-gray-4 bg-transparent text-black dark:border-gray-9 dark:text-white-85 md:h-14',
-          globalScrollTop > bannerBoxHeight - 56 ? '!bg-gray-1 dark:!bg-gray-12' : '',
+          'fixed left-0 top-0 z-50 h-13 w-full bg-gray-1 text-black shadow-gray-9 dark:bg-gray-12 dark:text-white-85 md:h-14 md:bg-transparent md:text-white md:backdrop-blur-sm dark:md:bg-transparent',
+          interruptScrollTop > bannerBoxHeight - 56
+            ? 'shadow-md shadow-gray-4 dark:shadow-gray-9 md:bg-gray-1 md:text-black md:!backdrop-blur-none dark:md:bg-gray-12'
+            : '',
         )}>
         <div className="relative flex h-full justify-between px-3 xl:mx-auto xl:max-w-screen-2xl">
           <div className="left h-full md:flex">
@@ -88,7 +98,7 @@ export default function NavContainer({ children }: { children: React.ReactNode }
               id="navigation"
               ref={navRef}
               className={clsx(
-                'absolute left-0 z-50 max-h-0 w-full overflow-hidden overscroll-y-none bg-gray-1 px-3 pl-8 transition-max-height duration-200 dark:bg-gray-12 md:static md:max-h-none',
+                'absolute left-0 z-50 max-h-0 w-full overflow-hidden overscroll-y-none bg-gray-1 px-3 pl-8 transition-max-height duration-200 dark:bg-gray-12 md:static md:max-h-none md:!bg-transparent',
               )}
               onClick={mobileNavLinkClick}>
               {children}

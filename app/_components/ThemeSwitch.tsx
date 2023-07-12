@@ -25,7 +25,7 @@ export default function ThemeSwitch() {
       <IconSun
         className={clsx(
           'absolute left-1/2 top-1/2 h-3/5 w-3/5 -translate-x-1/2 -translate-y-1/2 transition-transform duration-200',
-          resolvedTheme === 'light' ? 'visible -rotate-45 opacity-100' : 'invisible rotate-0 opacity-0',
+          resolvedTheme === 'light' ? 'visible rotate-45 opacity-100' : 'invisible rotate-0 opacity-0',
         )}
       />
       <IconMoon
