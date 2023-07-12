@@ -9,7 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
-    target-branch: "dev*"
+    target-branch: "dev"
     ignore:
       # For prettier, ignore all updates
       - dependency-name: "prettier"
