@@ -16,7 +16,6 @@ export default function NavContainer({ children }: { children: React.ReactNode }
   const { width: globalWidth } = useContext(GlobalWidthContext)
   const segments = useSelectedLayoutSegments()
   const [isOpen, toggleState] = useState(false)
-  const [interruptScrollTop, setInterruptScrollTop] = useState(globalScrollTop)
 
   const navRef = useRef<HTMLDivElement>(null)
   const clientHeight = useRef(0)
@@ -74,21 +73,14 @@ export default function NavContainer({ children }: { children: React.ReactNode }
     menuClick()
   }
 
-  useEffect(() => {
-    if (globalWidth <= 768) {
-      setInterruptScrollTop(-1000)
-    } else setInterruptScrollTop(globalScrollTop)
-  }, [globalScrollTop, globalWidth])
-
   return (
     <>
       <header
         className={clsx(
-          'fixed left-0 top-0 z-50 h-13 w-full bg-gray-1 text-black dark:bg-gray-12 dark:text-white-85 md:h-14 md:bg-transparent md:text-white md:backdrop-blur-sm dark:md:bg-transparent',
-          interruptScrollTop > bannerBoxHeight - 56
-            ? 'md:!bg-gray-1 md:!text-black md:!backdrop-blur-none dark:md:!bg-gray-12 md:dark:!text-white-85'
+          'fixed left-0 top-0 z-50 h-13 w-full select-none bg-gray-1 text-black backdrop-blur-md transition-bg-color duration-100 dark:bg-gray-12 dark:text-white-85 md:h-14 md:bg-transparent md:text-white dark:md:bg-transparent',
+          globalScrollTop > bannerBoxHeight - 53
+            ? '!bg-white-65 shadow-md dark:!bg-black-45 dark:shadow-white-6 md:!text-black md:dark:!text-white-85'
             : '',
-          globalScrollTop > bannerBoxHeight - 56 ? 'shadow-md dark:shadow-white-6' : '',
         )}>
         <div className="relative flex h-full justify-between px-3 xl:mx-auto xl:max-w-screen-2xl">
           <div className="left h-full md:flex">

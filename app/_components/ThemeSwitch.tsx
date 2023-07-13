@@ -13,8 +13,9 @@ export default function ThemeSwitch() {
     setMounted(true)
   }, [])
 
-  if (!mounted) return null
+  if (!mounted) return <ThemeSwitchSkeleton />
 
+  // TODO: toggleTheme: light || dark || system
   const toggleTheme = () => {
     if (resolvedTheme === 'light') {
       setTheme('dark')
@@ -34,6 +35,14 @@ export default function ThemeSwitch() {
           resolvedTheme === 'dark' ? 'visible rotate-0 opacity-100' : 'invisible -rotate-45 opacity-0',
         )}
       />
+    </div>
+  )
+}
+
+export const ThemeSwitchSkeleton = () => {
+  return (
+    <div className={clsx('relative h-10 w-10 cursor-pointer')}>
+      <span className={'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xl'}>A</span>
     </div>
   )
 }

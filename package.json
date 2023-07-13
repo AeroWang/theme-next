@@ -14,7 +14,8 @@
     "ahooks": "^3.7.8",
     "autoprefixer": "10.4.14",
     "clsx": "^1.2.1",
-    "eslint-config-prettier": "^8.8.0",
+    "dayjs": "^1.11.9",
+    "lodash-es": "^4.17.21",
     "next": "13.4.9",
     "next-themes": "^0.2.1",
     "plaiceholder": "^3.0.0",
@@ -23,19 +24,23 @@
     "query-string": "^8.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "server-only": "^0.0.1",
     "tailwindcss": "3.3.2",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "url-parse": "^1.5.10"
   },
   "devDependencies": {
     "@aerowang/react-iconfont-cli": "^2.0.5",
+    "@types/lodash-es": "^4.17.7",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
+    "@types/url-parse": "^1.4.8",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
+    "eslint-config-prettier": "^8.8.0",
     "fs-extra": "^11.1.1",
     "prettier-plugin-tailwindcss": "^0.3.0",
-    "rimraf": "^5.0.1"
+    "rimraf": "^5.0.1",
+    "server-only": "^0.0.1"
   }
 }

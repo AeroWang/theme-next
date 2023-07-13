@@ -1,7 +1,7 @@
 import React from 'react'
 import HeaderBanner from '#/app/(blog)/_components/headBanner'
 
-export default function BlogIndexLayout({ children }: { children: React.ReactNode }) {
+export default function JournalsLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <HeaderBanner url={`${process.env.STATIC_URL}/img/bg4.jpg`} />

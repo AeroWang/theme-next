@@ -743,12 +743,17 @@
     --color-primary-next: #009ff7;
     animation: rainbow 30s linear infinite;
   }
+
   @media (prefers-reduced-motion: reduce) {
     :root {
       animation: none !important;
     }
   }
-  body{
+  html {
+    height: 100%;
+  }
+
+  body {
     -webkit-tap-highlight-color: transparent;
   }
 }
