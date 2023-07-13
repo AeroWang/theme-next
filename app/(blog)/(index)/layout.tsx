@@ -5,6 +5,10 @@ export default function BlogIndexLayout({ children }: { children: React.ReactNod
   return (
     <>
       <HeaderBanner url={'http://static-files-upyun.test.upcdn.net/img/bg4.jpg'} />
+      <section>
+        <section>{children}</section>
+        {/*<aside>aside</aside>*/}
+      </section>
     </>
   )
 }

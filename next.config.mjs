@@ -1,5 +1,11 @@
+// @ts-check
+import withPlaiceholder from "@plaiceholder/next";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    serverActions: true,
+  },
   images: {
     remotePatterns: [
       {
@@ -7,9 +13,6 @@ const nextConfig = {
         hostname: 'static-files-upyun.test.upcdn.net',
       },
     ],
-    loader: 'custom',
-    loaderFile: './app/_utils/imageLoader.js',
   },
 }
-
-module.exports = nextConfig
+export default withPlaiceholder(nextConfig)

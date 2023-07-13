@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import AImage from '#/app/_components/AImage'
 
 interface HeaderBannerProps {
   url: string
@@ -6,10 +6,14 @@ interface HeaderBannerProps {
 
 export default function HeaderBanner({ url }: HeaderBannerProps) {
   return (
-    <div
+    <AImage
       id="head-banner"
-      className="relative block h-64 w-full overflow-hidden md:h-[19rem] xl:h-[21rem] 4xl:h-[24rem]">
-      <Image src={url} alt={'headBannerImage'} style={{ objectFit: 'cover' }} fill priority quality={75} />
-    </div>
+      src={url}
+      alt={'headBannerImage'}
+      blurParam={'2xl'}
+      heightClass={'h-64 md:h-[19rem] xl:h-[21rem] 4xl:h-[24rem]'}
+      blurDataType={'svg'}
+      priority
+    />
   )
 }
