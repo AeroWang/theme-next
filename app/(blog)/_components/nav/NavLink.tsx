@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { MenuItem } from '#/app/_types/data'
+import { MenuItem } from '#/app/_types/halo/menu'
 import { useSelectedLayoutSegments } from 'next/navigation'
 import { useRef } from 'react'
 import clsx from 'clsx'

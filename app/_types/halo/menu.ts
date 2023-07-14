@@ -1,31 +1,18 @@
+import { IMetadata } from '#/app/_types/halo/metadata'
+
 export interface MenuRes {
   menuItems?: MenuItem[]
-  metadata: Metadata
+  metadata: IMetadata
   spec?: MenuSpec
 }
 export interface MenuItem {
   displayName?: string
-  metadata: Metadata
+  metadata: IMetadata
   children: MenuItem[]
   spec?: MenuItemSpec
   status: MenuItemStatus
 }
-export interface Metadata {
-  annotations?: { [key: string]: null | string } | null
-  creationTimestamp?: Date | null
-  deletionTimestamp?: Date | null
-  finalizers?: Array<null | string> | null
-  /**
-   * The name field will be generated automatically according to the given generateName field
-   */
-  generateName?: string
-  labels?: { [key: string]: null | string } | null
-  /**
-   * Metadata name
-   */
-  name: string
-  version?: number | null
-}
+
 export interface MenuSpec {
   /**
    * 显示名称
@@ -66,7 +53,7 @@ export enum Target {
   Blank = '_blank',
   Parent = '_parent',
   Self = '_self',
-  Top = '_top'
+  Top = '_top',
 }
 /**
  * Ref，Extension reference object. The name is mandatory
