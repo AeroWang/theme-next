@@ -1,22 +1,26 @@
 import { haloFetch } from '#/app/_services/base'
 import { HALO_API_PATH } from '#/app/_dicts/haloApiPath'
-import { MenuRes } from '#/app/_types/data'
+import { MenuRes } from '#/app/_types/halo/menu'
+import queryString from 'query-string'
 
-// import querystring from 'querystring'
-
-export async function getMenu(): Promise<MenuRes | undefined> {
-  const res = await haloFetch(HALO_API_PATH.menuByPrimary)
-  if (!res.ok) return undefined
-  return res.json()
+export function getMenu(): Promise<MenuRes | undefined> {
+  return haloFetch(HALO_API_PATH.menuByPrimary)
 }
 
-export async function getMenuByName(name?: string): Promise<MenuRes | undefined> {
+export function getMenuByName(name?: string): Promise<MenuRes | undefined> {
   const queryName = name ? name : 'primary'
-  const res = await haloFetch(`${HALO_API_PATH.menuByName}/${queryName}`, {
+  return haloFetch(`${HALO_API_PATH.menuByName}/${queryName}`, {
     next: {
       revalidate: 60,
     },
   })
-  if (!res.ok) return undefined
-  return res.json()
+}
+
+export function getMenuItems(names: string[]) {
+  const query = {
+    page: 0,
+    size: 0,
+    fieldSelector: `name=(${names.join(',')})`,
+  }
+  return haloFetch(`/api/v1alpha1/menuitems?${queryString.stringify(query)}`)
 }

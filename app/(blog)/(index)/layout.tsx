@@ -6,7 +6,7 @@ export default function BlogIndexLayout({ children }: { children: React.ReactNod
     <>
       <HeaderBanner url={`${process.env.STATIC_URL}/img/bg4.jpg`} />
       <section>
-        <section>{children}</section>
+        <section className={'mx-auto mt-4 block max-w-3xl'}>{children}</section>
         {/*<aside>aside</aside>*/}
       </section>
     </>

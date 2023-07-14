@@ -25,6 +25,8 @@ export interface IPostsQuery {
   /**
    * Sort property and direction of the list result. Support sorting based on attribute name
    * path.
+   *
+   * eg: ['spec.publishTime', 'dsc']
    */
   sort?: any[]
 }
