@@ -22,7 +22,7 @@ export default function ImageLoader({ url, alt, quality, base64, blurDataType, p
   // 目前仅对 upyun 做路径处理
   const loader = ({ src, width, quality = 75 }: LoaderParams) => {
     // TODO: 参数待细分
-    return `${src}!/fw/${width}/quality/${quality}`
+    return `${src}!/quality/${quality}/fw/${width}`
   }
   // TODO: 又拍云图片加载失败时 fallbackImageLoader
   const onError = (e: unknown) => {
