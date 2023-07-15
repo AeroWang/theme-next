@@ -8,6 +8,8 @@ import { IList } from '#/app/_types/halo/common'
 import Link from 'next/link'
 import IconLeft from '#/app/_components/SvgIcons/IconLeft'
 import IconRight from '#/app/_components/SvgIcons/IconRight'
+import JumpNextSvg from './JumpNextSvg'
+import JumpPrevSvg from './JumpPrevSvg'
 
 type Props = Omit<IList<IPostVo>, 'items'>
 
@@ -29,7 +31,7 @@ const itemRender: TItemRender = (current, type, element, paginationInfo) => {
             <IconLeft />
           </Link>
         )
-      return <IconLeft className={'cursor-not-allowed'} />
+      return <IconLeft />
     case 'next':
       if (paginationInfo.hasNext)
         return (
@@ -37,13 +39,30 @@ const itemRender: TItemRender = (current, type, element, paginationInfo) => {
             <IconRight />
           </Link>
         )
-      return <IconRight className={'cursor-not-allowed'} />
+      return <IconRight />
+    case 'jump-prev':
+      return (
+        <>
+          <span role={'img'} aria-label="double-left" className={'icon'}>
+            <JumpPrevSvg />
+          </span>
+          <span className="aero-pagination-item-ellipsis">•••</span>
+        </>
+      )
+    case 'jump-next':
+      return (
+        <>
+          <span role={'img'} aria-label="double-right" className={'icon'}>
+            <JumpNextSvg />
+          </span>
+          <span className="aero-pagination-item-ellipsis">•••</span>
+        </>
+      )
   }
-  return element
 }
 
 const Pagination = (paginationInfo: Props) => {
-  const { page, total, hasNext, hasPrevious, first, last, totalPages } = paginationInfo
+  const { page, total, hasNext, size, hasPrevious, first, last, totalPages } = paginationInfo
   const router = useRouter()
   const onChange = (toPageNum: number) => {
     router.push(`/page/${toPageNum}`)
@@ -53,6 +72,7 @@ const Pagination = (paginationInfo: Props) => {
     <RCPagination
       prefixCls={'aero-pagination'}
       onChange={onChange}
+      pageSize={size}
       current={page}
       total={total}
       hideOnSinglePage
