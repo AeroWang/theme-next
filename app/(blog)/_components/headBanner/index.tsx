@@ -14,6 +14,7 @@ export default function HeaderBanner({ url }: HeaderBannerProps) {
       heightClass="h-72 md:h-[21rem] xl:h-[23rem] 3xl:h-[25rem]"
       blurDataType={'svg'}
       priority
+      sizes="100vw"
     />
   )
 }

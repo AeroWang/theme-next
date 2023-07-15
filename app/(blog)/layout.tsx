@@ -37,7 +37,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html suppressHydrationWarning lang="zh">
-      <body className="flex h-[2000px] flex-col bg-gray-3 dark:bg-gray-13">
+      <body className="flex h-full flex-col bg-gray-3 dark:bg-gray-13">
         <ThemesProvider>
           <GlobalScrollProvider>
             <GlobalSizeProvider>

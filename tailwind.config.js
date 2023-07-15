@@ -26,5 +26,13 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  corePlugins: {
+    aspectRatio: false,
+  },
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography')({
+      className: 'wysiwyg',
+    }),
+  ],
 }

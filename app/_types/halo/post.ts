@@ -32,7 +32,7 @@ export interface IPostsQuery {
 }
 
 /**
- * ListedPostVo
+ * ArticleMiniInfo
  */
 export interface IPostVo {
   categories?: ICategoryVo[]

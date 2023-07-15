@@ -6,6 +6,7 @@ import clsx from 'clsx'
 export interface AImageProps {
   src: string
   alt: string
+  sizes?: string
   // 生成的图片模糊类型，默认：'css'
   blurDataType?: 'css' | 'svg' | 'base64'
   // 优先级
@@ -13,7 +14,8 @@ export interface AImageProps {
   id?: string
   widthClass?: string
   heightClass?: string
-  otherClass?: string
+  // 除宽高之外的其它类名
+  className?: string
   /*
   blurData 缩略图来源宽度约定参数；
   此处为又拍云（https://console.upyun.com/services/static-files-upyun/thumbFile/create/）
@@ -33,10 +35,11 @@ export interface AImageProps {
 export default async function AImage({
   src,
   alt,
+  sizes,
   id,
   widthClass,
   heightClass,
-  otherClass,
+  className,
   quality,
   blurParam = 'md',
   priority = false,
@@ -50,7 +53,7 @@ export default async function AImage({
         'relative block overflow-hidden dark:brightness-90',
         widthClass ? widthClass : 'w-full',
         heightClass ? heightClass : 'h-full',
-        otherClass,
+        className,
       )}>
       {blurDataType === 'svg'
         ? React.createElement(
@@ -103,6 +106,7 @@ export default async function AImage({
         priority={priority}
         blurDataType={blurDataType}
         base64={base64}
+        sizes={sizes || '100vw'}
       />
     </div>
   )

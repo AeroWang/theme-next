@@ -12,13 +12,27 @@ interface LoaderParams {
 interface ImageLoaderProps {
   url: string
   alt: string
+  /**
+   * sizes 属性使用以逗号分隔的媒体查询和图像宽度列表。
+   * https://web.dev/learn/design/responsive-images/#sizes
+   * https://www.ruanyifeng.com/blog/2019/06/responsive-images.html
+   */
+  sizes: string
   priority?: boolean
   quality?: number
   blurDataType?: AImageProps['blurDataType']
   base64?: string
 }
 
-export default function ImageLoader({ url, alt, quality, base64, blurDataType, priority = false }: ImageLoaderProps) {
+export default function ImageLoader({
+  url,
+  alt,
+  sizes,
+  quality,
+  base64,
+  blurDataType,
+  priority = false,
+}: ImageLoaderProps) {
   // 目前仅对 upyun 做路径处理
   const loader = ({ src, width, quality = 75 }: LoaderParams) => {
     // TODO: 参数待细分

@@ -7,6 +7,9 @@ const nextConfig = {
     serverActions: true,
   },
   images: {
+    deviceSizes: [400, 768, 1024, 1280, 1560, 1920, 2560],
+    // ?
+    // imageSizes: [400, 768, 1024, 1280, 1560, 1920, 2560],
     remotePatterns: [
       {
         protocol: 'http',
