@@ -11,8 +11,7 @@ type Props = {
 
 export async function generateStaticParams() {
   const postsRes = await getPosts({ page: 1, sort: ['spec.publishTime', 'desc'] })
-  if (!postsRes) notFound()
-  if (!postsRes.items.length) notFound()
+  if (!postsRes || !postsRes.items.length) notFound()
   const pageNumArr = lodash.range(1, postsRes.totalPages + 1)
   return pageNumArr.map((num) => ({
     pageNum: String(num),
@@ -21,9 +20,7 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }: Props) {
   const posts = await getPosts({ page: params.pageNum, sort: ['spec.publishTime', 'desc'] })
-  if (!posts) {
-    notFound()
-  }
+  if (!posts || !posts.items.length) notFound()
   const paginationData = lodash.omit(posts, 'items')
   return (
     <>
