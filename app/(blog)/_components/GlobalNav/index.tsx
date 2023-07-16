@@ -1,7 +1,7 @@
-import NavContainer from '#/app/(blog)/_components/nav/NavContainer'
+import NavContainer from '#/app/(blog)/_components/GlobalNav/NavContainer'
 import { getMenuByName } from '#/app/_services/menus'
 import { notFound } from 'next/navigation'
-import NavLink from '#/app/(blog)/_components/nav/NavLink'
+import NavLink from '#/app/(blog)/_components/GlobalNav/NavLink'
 
 const GlobalNav = async () => {
   const menus = await getMenuByName()

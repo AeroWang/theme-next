@@ -1,5 +1,5 @@
 import '#/app/assets/style/globals.css'
-import GlobalNav from '#/app/(blog)/_components/nav'
+import GlobalNav from '#/app/(blog)/_components/GlobalNav'
 import { ThemesProvider } from '#/app/_components/Providers/ThemesProvider'
 import GlobalScrollProvider from '#/app/_components/Providers/GlobalScrollProvider'
 import GlobalSizeProvider from '#/app/_components/Providers/GlobalSizeProvider'

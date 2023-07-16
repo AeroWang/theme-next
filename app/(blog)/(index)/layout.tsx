@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderBanner from '#/app/(blog)/_components/headBanner'
+import HeaderBanner from '../_components/HeadBanner'
 
 export default function BlogIndexLayout({ children }: { children: React.ReactNode }) {
   return (
