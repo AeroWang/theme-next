@@ -3,7 +3,7 @@ import { compileMDX, MDXRemote } from 'next-mdx-remote/rsc'
 import { MDXRemoteProps } from 'next-mdx-remote/dist/rsc'
 import CustomLink from '#/app/_components/MDX/CustomLink'
 import remarkGfm from 'remark-gfm'
-import rehypePresetMinify from 'rehype-preset-minify'
+// import rehypePresetMinify from 'rehype-preset-minify'
 import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -52,7 +52,7 @@ export const CustomMDX = async (originalContent: string, props?: MDXRemoteProps)
           ],
           [rehypePrism],
           // { ...rehypePresetMinify }
-          { plugins: [...rehypePresetMinify.plugins], settings: { ...rehypePresetMinify.settings } },
+          // { plugins: [...rehypePresetMinify.plugins], settings: { ...rehypePresetMinify.settings } },
         ],
         format: 'mdx',
       },
@@ -71,7 +71,7 @@ const options = {
     rehypePlugins: [
       [rehypePrism],
       // { ...rehypePresetMinify }
-      { plugins: [...rehypePresetMinify.plugins], settings: { ...rehypePresetMinify.settings } },
+      // { plugins: [...rehypePresetMinify.plugins], settings: { ...rehypePresetMinify.settings } },
     ],
     format: 'mdx',
   },
