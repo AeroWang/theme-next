@@ -8,3 +8,9 @@ export const dayjsRelativeTime = (time: Date | undefined) => {
   const diffMonth = curTime.diff(publishTime, 'month', true)
   return diffMonth > 2 ? publishTime : dayjsPlugin(time).fromNow()
 }
+
+export const addDelay = async (delayTime?: number) => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve('success'), delayTime ?? 1000)
+  })
+}

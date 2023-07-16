@@ -4,7 +4,10 @@ import { IPostsQuery, IPostVo } from '#/app/_types/halo/post'
 import { IList } from '#/app/_types/halo/common'
 import queryString from 'query-string'
 
-export function getPosts(queryParams?: IPostsQuery): Promise<IList<IPostVo> | undefined> {
+export function getPosts(
+  queryParams?: IPostsQuery,
+  init?: RequestInit | undefined,
+): Promise<IList<IPostVo> | undefined> {
   const query = queryString.stringify(
     {
       page: queryParams?.page ?? 1,
@@ -17,5 +20,5 @@ export function getPosts(queryParams?: IPostsQuery): Promise<IList<IPostVo> | un
     },
     { skipNull: true },
   )
-  return haloFetch(`${HALO_API_PATH.posts}?${query}`)
+  return haloFetch(`${HALO_API_PATH.posts}?${query}`, init)
 }

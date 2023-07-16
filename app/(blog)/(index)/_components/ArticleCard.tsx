@@ -23,7 +23,7 @@ const ArticleCard = ({ article }: Props) => {
           />
         ) : null}
         <div className={'content-info group flex w-full flex-col justify-between bg-gray-1 p-4 dark:bg-gray-11'}>
-          <h1 className={'mb-3.5 line-clamp-1 text-xl font-semibold md:group-hover:text-primary'}>
+          <h1 className={'mb-3.5 line-clamp-1 text-lg font-semibold md:text-xl md:group-hover:text-primary'}>
             {article.spec?.title}
           </h1>
           <div className={'mb-3.5 line-clamp-2'}>

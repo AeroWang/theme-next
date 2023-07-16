@@ -6,7 +6,7 @@ import { lodash } from '#/app/_lib'
 import { Pagination } from '#/app/(blog)/_components/Pagination'
 
 export default async function Page() {
-  const posts = await getPosts({ sort: ['spec.publishTime', 'desc'] })
+  const posts = await getPosts({ sort: ['spec.publishTime', 'asc'] })
   if (!posts || !posts.items.length) notFound()
   const paginationData = lodash.omit(posts, 'items')
   return (
