@@ -5,6 +5,7 @@ import withPlaiceholder from "@plaiceholder/next";
 const nextConfig = {
   experimental: {
     serverActions: true,
+    serverComponentsExternalPackages: ['rehype-preset-minify']
   },
   images: {
     deviceSizes: [400, 768, 1024, 1280, 1560, 1920, 2560],
