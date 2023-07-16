@@ -47,7 +47,10 @@ const List = async () => {
               <div className={'text-xs text-gray-7'}>{dayjsRelativeTime(momentItem.moment.spec.releaseTime)}</div>
             </div>
           </div>
-          <div className={'wysiwyg wysiwyg-sm md:wysiwyg-base dark:wysiwyg-img:brightness-75'}>
+          <div
+            className={
+              'wysiwyg wysiwyg-sm text-black dark:wysiwyg-invert md:wysiwyg-base dark:text-white-85 dark:wysiwyg-img:brightness-75'
+            }>
             {momentItem.moment.spec.content.raw ? (
               <CustomSimpleMDX source={momentItem.moment.spec.content.raw} />
             ) : (
