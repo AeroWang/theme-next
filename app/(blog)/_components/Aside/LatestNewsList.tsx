@@ -17,15 +17,12 @@ const LatestNewsList = () => {
 
 const List = async () => {
   // await addDelay(2000)
-  const moments = await getMoments(
-    {
-      page: 1,
-      size: 3,
-      // 时间降序
-      sortOrder: false,
-    },
-    { next: { revalidate: 0 } },
-  )
+  const moments = await getMoments({
+    page: 1,
+    size: 3,
+    // 时间降序
+    sortOrder: false,
+  })
   if (!moments || !moments.items.length)
     return (
       <div title={'NotFound'}>

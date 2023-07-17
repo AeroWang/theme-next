@@ -16,7 +16,7 @@ const LatestPostList = () => {
 
 const List = async () => {
   // await addDelay()
-  const posts = await getPosts({ page: 1, size: 6, sort: ['spec.publishTime', 'desc'] }, { next: { revalidate: 0 } })
+  const posts = await getPosts({ page: 1, size: 6, sort: ['spec.publishTime', 'desc'] })
   if (!posts || !posts.items.length)
     return (
       <div title={'NotFound'}>

@@ -9,11 +9,7 @@ export function getMenu(): Promise<MenuRes | undefined> {
 
 export function getMenuByName(name?: string): Promise<MenuRes | undefined> {
   const queryName = name ? name : 'primary'
-  return haloFetch(`${HALO_API_PATH.menuByName}/${queryName}`, {
-    next: {
-      revalidate: 60,
-    },
-  })
+  return haloFetch(`${HALO_API_PATH.menuByName}/${queryName}`)
 }
 
 export function getMenuItems(names: string[]) {
