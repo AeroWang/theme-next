@@ -13,7 +13,7 @@
     "@plaiceholder/next": "^3.0.0",
     "ahooks": "^3.7.8",
     "autoprefixer": "10.4.14",
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
     "dayjs": "^1.11.9",
     "hast-util-to-string": "^2.0.0",
     "hastscript": "^7.2.0",
