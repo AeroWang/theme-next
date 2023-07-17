@@ -1,6 +1,6 @@
 ## Halo Theme Next
 
-一款使用了 [Halo](https://github.com/halo-dev/halo) API接口服务的博客主题
+一款使用了 [Halo](https://github.com/halo-dev/halo) v2.7.0 API接口服务的博客主题
 
 预览图待定，可以先去 <a href="https://theme-next-git-dev-gotoobe.vercel.app" target="_blank">开发预览地址</a> 瞧一瞧
 
