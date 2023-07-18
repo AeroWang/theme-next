@@ -1,4 +1,5 @@
 // 此结构来自 moments（瞬间） 插件 v1alpha1
+// TODO: @halo-dev/api-client 中暂时没有 moments 相关类型
 
 import { IMetadata } from '#/app/_types/halo/metadata'
 

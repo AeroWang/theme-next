@@ -3,15 +3,14 @@ import React from 'react'
 import RCPagination from 'rc-pagination'
 import './pagination.css'
 import { useRouter } from 'next/navigation'
-import { IPostVo } from '#/app/_types/halo/post'
-import { IList } from '#/app/_types/halo/common'
+import type { ListedPostVoList } from '@halo-dev/api-client'
 import Link from 'next/link'
 import IconLeft from '#/app/_components/SvgIcons/IconLeft'
 import IconRight from '#/app/_components/SvgIcons/IconRight'
 import JumpNextSvg from './JumpNextSvg'
 import JumpPrevSvg from './JumpPrevSvg'
 
-type Props = Omit<IList<IPostVo>, 'items'>
+type Props = Omit<ListedPostVoList, 'items'>
 
 type TItemRender = (
   page: number,

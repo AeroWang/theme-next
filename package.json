@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@aerowang/react-iconfont-cli": "^2.0.5",
+    "@halo-dev/api-client": "^2.7.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/lodash-es": "^4.17.7",

@@ -1,4 +1,4 @@
-import { IPostVo } from '#/app/_types/halo/post'
+import type { ListedPostVo } from '@halo-dev/api-client'
 import Link from 'next/link'
 import AImage from '#/app/_components/AImage'
 import IconTimeCircle from '#/app/_components/SvgIcons/IconTimeCircle'
@@ -8,7 +8,7 @@ import IconHeart from '#/app/_components/SvgIcons/IconHeart'
 import IconEye from '#/app/_components/SvgIcons/IconEye'
 
 type Props = {
-  article: IPostVo
+  article: ListedPostVo
 }
 const ArticleCard = ({ article }: Props) => {
   return (

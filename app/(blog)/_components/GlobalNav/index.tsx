@@ -12,7 +12,7 @@ const GlobalNav = async () => {
   return (
     <NavContainer>
       {menuItems?.map((item) => (
-        <NavLink key={item.status?.href} item={item} />
+        <NavLink key={item.metadata.name} item={item} />
       ))}
     </NavContainer>
   )

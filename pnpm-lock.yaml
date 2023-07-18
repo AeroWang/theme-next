@@ -88,6 +88,9 @@ devDependencies:
   '@aerowang/react-iconfont-cli':
     specifier: ^2.0.5
     version: 2.0.5(react@18.2.0)
+  '@halo-dev/api-client':
+    specifier: ^2.7.0
+    version: 2.7.0
   '@tailwindcss/aspect-ratio':
     specifier: ^0.4.2
     version: 0.4.2(tailwindcss@3.3.2)
@@ -201,6 +204,10 @@ packages:
   /@eslint/js@8.44.0:
     resolution: {integrity: sha512-Ag+9YM4ocKQx9AarydN0KY2j0ErMHNIocPDrVo8zAE44xLTjEtz81OdR68/cydGtk6m6jDb5Za3r2useMzYmSw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: true
+
+  /@halo-dev/api-client@2.7.0:
+    resolution: {integrity: sha512-HT3TIEjX/L2sJafkni7YfYetUPH1SKBqCAs6KoK0MFrOdjkDS27ojUBvJNNUxLVGQs6fLCr9TeEzEBxpPwimsA==}
     dev: true
 
   /@humanwhocodes/config-array@0.11.10:

@@ -1,13 +1,13 @@
 import { haloFetch } from '#/app/_services/base'
 import { HALO_API_PATH } from '#/app/_dicts/haloApiPath'
-import { MenuRes } from '#/app/_types/halo/menu'
 import queryString from 'query-string'
+import type { MenuVo } from '@halo-dev/api-client'
 
-export function getMenu(): Promise<MenuRes | undefined> {
+export function getMenu(): Promise<MenuVo | undefined> {
   return haloFetch(HALO_API_PATH.menuByPrimary)
 }
 
-export function getMenuByName(name?: string): Promise<MenuRes | undefined> {
+export function getMenuByName(name?: string): Promise<MenuVo | undefined> {
   const queryName = name ? name : 'primary'
   return haloFetch(`${HALO_API_PATH.menuByName}/${queryName}`)
 }

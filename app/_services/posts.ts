@@ -1,13 +1,12 @@
 import { haloFetch } from '#/app/_services/base'
 import { HALO_API_PATH } from '#/app/_dicts/haloApiPath'
-import { IPostsQuery, IPostVo } from '#/app/_types/halo/post'
-import { IList } from '#/app/_types/halo/common'
 import queryString from 'query-string'
+import type { ApiContentHaloRunV1alpha1PostApiQueryPostsRequest, ListedPostVoList } from '@halo-dev/api-client'
 
 export function getPosts(
-  queryParams?: IPostsQuery,
+  queryParams?: ApiContentHaloRunV1alpha1PostApiQueryPostsRequest,
   init?: RequestInit | undefined,
-): Promise<IList<IPostVo> | undefined> {
+): Promise<ListedPostVoList | undefined> {
   const query = queryString.stringify(
     {
       page: queryParams?.page ?? 1,
