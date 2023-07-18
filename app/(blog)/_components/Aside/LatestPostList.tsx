@@ -30,7 +30,7 @@ const List = async () => {
           title={articleItem.spec?.title}
           key={articleItem.metadata.name}
           href={`/p/${articleItem.spec?.slug}`}
-          className={'mb-4 block text-sm text-black last:mb-0 hover:text-primary dark:text-white-85 md:text-base'}>
+          className={'mb-4 block text-sm text-black last:mb-0 hover:!text-primary dark:text-white-85 md:text-base'}>
           <article className={'line-clamp-1'}>{articleItem.spec?.title}</article>
         </Link>
       ))}
