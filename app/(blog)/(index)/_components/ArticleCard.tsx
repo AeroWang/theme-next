@@ -13,7 +13,9 @@ type Props = {
 const ArticleCard = ({ article }: Props) => {
   return (
     <article className={'mb-4 overflow-hidden rounded-md'}>
-      <Link href={`/p/${article.spec?.slug}`} className={'h-full w-full overflow-hidden sm:flex'}>
+      <Link
+        href={`/p/${article.metadata.name}!${article.spec?.slug}`}
+        className={'h-full w-full overflow-hidden sm:flex'}>
         {article.spec?.cover ? (
           <AImage
             src={article.spec.cover}

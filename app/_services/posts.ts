@@ -1,7 +1,7 @@
 import { haloFetch } from '#/app/_services/base'
 import { HALO_API_PATH } from '#/app/_dicts/haloApiPath'
 import queryString from 'query-string'
-import type { ApiContentHaloRunV1alpha1PostApiQueryPostsRequest, ListedPostVoList } from '@halo-dev/api-client'
+import type { ApiContentHaloRunV1alpha1PostApiQueryPostsRequest, ListedPostVoList, PostVo } from '@halo-dev/api-client'
 
 export function getPosts(
   queryParams?: ApiContentHaloRunV1alpha1PostApiQueryPostsRequest,
@@ -20,4 +20,8 @@ export function getPosts(
     { skipNull: true },
   )
   return haloFetch(`${HALO_API_PATH.posts}?${query}`, init)
+}
+
+export function getPostByMetaName(metaName: string, init?: RequestInit | undefined): Promise<PostVo | undefined> {
+  return haloFetch(`${HALO_API_PATH.posts}/${metaName}`, init)
 }
