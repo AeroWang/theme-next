@@ -16,11 +16,11 @@ export default function NavLink({ item }: { item: MenuItemVo }) {
   }
   return (
     <Link
-      className="flex h-full items-center py-1 first:pt-3 last:pb-3 md:inline-flex md:px-3 md:py-0 md:first:py-0 md:first:pl-0 md:last:py-0 md:last:pr-0"
-      href={item.spec?.href || '/'}
+      className="flex h-full items-center py-1 first:pt-3 last:pb-3 md:mx-3 md:inline-flex md:py-0 md:first:py-0 md:first:pl-0 md:last:py-0 md:last:pr-0"
+      href={item.spec?.href || item.status?.href || '/'}
       target={item.spec?.target}>
       <span className={clsx(finalSegment.current === item.spec?.href ? 'text-primary' : '')}>
-        {item.spec?.displayName}
+        {item.spec?.displayName || item.status?.displayName}
       </span>
       {/* ? 预留 */}
       {/*<div className="icon md:hidden"></div>*/}
