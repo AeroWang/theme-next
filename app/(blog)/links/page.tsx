@@ -21,7 +21,7 @@ const LinkTeam = async ({ teamItem }: { teamItem: LinkGroup }) => {
             href={link.spec.url}
             target="_blank"
             className={
-              'box-border flex items-center rounded-md bg-gray-1 px-4 py-2 transition duration-300 hover:shadow-lg dark:bg-gray-7 dark:hover:shadow-gray-6'
+              'box-border flex items-center rounded-md bg-gray-1 px-4 py-2 transition duration-300 hover:shadow-md dark:bg-gray-11 dark:hover:shadow-gray-9'
             }>
             <div className={'relative h-9 w-9 flex-none overflow-hidden sm:h-14 sm:w-14'}>
               <AImage
@@ -33,7 +33,7 @@ const LinkTeam = async ({ teamItem }: { teamItem: LinkGroup }) => {
             </div>
             <div className={'relative ml-5 flex h-full flex-1 flex-col justify-evenly'}>
               <div className={'name text-sm font-semibold md:text-base'}>{link.spec.displayName}</div>
-              <div className={'desc line-clamp-2 text-xs text-zinc-500 dark:text-zinc-400 md:text-sm'}>
+              <div className={'desc line-clamp-2 text-xs text-gray-7 dark:text-gray-7 md:text-sm'}>
                 {link.spec.description}
               </div>
             </div>
