@@ -1,10 +1,12 @@
 import React from 'react'
+import LatestNewsList from '#/app/(blog)/_components/Aside/LatestNewsList'
 
 export const metadata = {
-  title: '动态'
+  title: '动态',
 }
 
-const Page = async () => {
-  return <div>动态页</div>
+const Page = () => {
+  return <LatestNewsList />
 }
+
 export default Page

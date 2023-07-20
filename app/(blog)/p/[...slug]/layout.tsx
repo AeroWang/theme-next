@@ -48,12 +48,13 @@ export default async function ArticleLayout({ params, children }: Props & { chil
         <article
           className={clsx(
             style.content,
-            'wysiwyg wysiwyg-sm mx-auto max-w-4xl px-4 py-6 text-black dark:wysiwyg-invert md:wysiwyg-base dark:text-white-85 dark:wysiwyg-img:brightness-75',
+            'wysiwyg wysiwyg-sm mx-auto max-w-4xl px-4 py-6 text-black dark:wysiwyg-invert md:wysiwyg-base dark:text-white-85 dark:wysiwyg-img:brightness-75 xl:wysiwyg-code:text-base',
           )}>
           {children}
         </article>
         {/*<aside>aside</aside>*/}
       </section>
+      <section className={'mx-auto py-10 text-black dark:text-white-85'}>底部这里还没想好写什么👀 !!!</section>
     </>
   )
 }

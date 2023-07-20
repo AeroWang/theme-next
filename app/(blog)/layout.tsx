@@ -44,9 +44,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <>
                 <GlobalNav />
                 <main className={'flex w-full flex-1 flex-col'}>{children}</main>
-                <section className={'mx-auto py-10 text-black dark:text-white-85'}>
-                  底部这里还没想好写什么👀 !!!
-                </section>
                 <GlobalFooter />
               </>
             </GlobalSizeProvider>

@@ -15,7 +15,7 @@ const CustomLink = ({ props }: Props) => {
   useEffect(() => {
     const parseUrl = urlParse(props.href!)
     const hostName = parseUrl.hostname
-    console.log(hostName)
+    // console.log(hostName)
     if (parseUrl.slashes && !hostName.includes('localhost') && !hostName.includes('aerowang.cn')) {
       setFinal({
         href: `${window.location.origin}/confirm?target_url=${parseUrl.href}`.replace('#', '%23'),
@@ -37,10 +37,9 @@ const CustomLink = ({ props }: Props) => {
     }
   }, [props.href])
   const clickUrl = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault()
     if (!final.notHttp && final.blank) {
       event.preventDefault()
-      // window.open(final.href, '_blank')
+      window.open(final.href, '_blank')
     }
   }
   return (

@@ -15,7 +15,7 @@ const LatestNewsList = () => {
   )
 }
 
-const List = async () => {
+export const List = async () => {
   // await addDelay(2000)
   const moments = await getMoments({
     page: 1,
@@ -46,7 +46,7 @@ const List = async () => {
           </div>
           <div
             className={
-              'wysiwyg wysiwyg-sm text-black dark:wysiwyg-invert md:wysiwyg-base dark:text-white-85 dark:wysiwyg-img:brightness-75'
+              'wysiwyg wysiwyg-sm !max-w-none text-black dark:wysiwyg-invert md:wysiwyg-base dark:text-white-85 dark:wysiwyg-img:brightness-75'
             }>
             {momentItem.moment.spec.content.raw ? (
               <CustomSimpleMDX source={momentItem.moment.spec.content.raw} />
@@ -62,7 +62,7 @@ const List = async () => {
 }
 
 const skeletonNum = lodash.range(5)
-const NewsContentSkeleton = () => {
+export const NewsContentSkeleton = () => {
   return (
     <ContentCard>
       {skeletonNum.map((item) => (

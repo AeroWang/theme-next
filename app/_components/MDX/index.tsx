@@ -11,7 +11,7 @@ import type { Node as HastNode } from 'hast-util-to-string'
 import { h } from 'hastscript'
 
 const components = {
-  // TODO: ? 未生效
+  // TODO: CustomSimpleMDX ? 未生效
   a: (props: AnchorHTMLAttributes<HTMLElement>) => {
     return <CustomLink props={props} />
   },
