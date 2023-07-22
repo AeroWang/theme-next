@@ -5,7 +5,7 @@ export default function LinksLayout({ children }: { children: React.ReactNode })
   return (
     <>
       <HeaderBanner url={`${process.env.STATIC_URL}/img/bg3.jpg`} />
-      <section className={'mx-auto max-w-4xl px-4 py-10'}>{children}</section>
+      <section className={'mx-auto w-full px-4 py-5 md:max-w-4xl md:py-10'}>{children}</section>
     </>
   )
 }
