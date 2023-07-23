@@ -1,0 +1,10 @@
+.container {
+  &:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    top: 32px;
+    left: 37px;
+    border-left: 2px solid theme(colors.gray.7);
+  }
+}

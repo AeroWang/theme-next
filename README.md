@@ -12,6 +12,12 @@
 
 **重要：** 该主题并不能直接在 [Halo](https://github.com/halo-dev/halo) 后台安装，需要单独部署。
 
+### API 接口说明
+
+接口好像暂时不太完善，一些功能着实不太好实现
+
+- 暂时没有归档接口，先搁置归档页面
+
 ## 部署
 
 `.env.local` 文件存储了一些环境变量，并未上传到仓库中，请自行创建补充
@@ -59,8 +65,15 @@ STATIC_URL=https://a.example.com
 <a href="https://vercel.com/docs/getting-started-with-vercel" target="_blank">vercel 部署开始的地方</a>
 
 ## 特性
-
+* 单页面顺滑地无刷新加载内容
+* 图片加载优化（blur, lazyload, Responsive images）
 * 更现代化？因人而异吧
 * ISR(增量静态生成)
 * 后面再补充...
 
+## TODO
+1. [ ] images 待优化
+2. [ ] ISR 待补充
+3. [ ] 点赞功能
+4. [ ] 文章搜索
+5. [ ] 站点数据统计及相关区域展示

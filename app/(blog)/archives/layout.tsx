@@ -5,10 +5,7 @@ export default function AboutLayout({ children }: { children: React.ReactNode })
   return (
     <>
       <HeaderBanner url={`${process.env.STATIC_URL}/img/bg3.jpg`} />
-      <section>
-        <section>{children}</section>
-        {/*<aside>aside</aside>*/}
-      </section>
+      <section className={'mx-auto w-full max-w-3xl px-4 pb-4 pt-4 xl:max-w-6xl'}>{children}</section>
     </>
   )
 }
