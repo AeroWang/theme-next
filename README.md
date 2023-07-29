@@ -67,12 +67,16 @@ STATIC_URL=https://a.example.com
 ## 特性
 * 单页面顺滑地无刷新加载内容
 * 图片加载优化（blur, lazyload, Responsive images）
+* 图片加载成功前的占位符图像提供三种形式（`css`, `svg`, `base64`）渲染
+* 提供两种方式加载图片：
+  1. 直接加载远程图片
+  2. 本机中转远程图片
 * 更现代化？因人而异吧
-* ISR(增量静态生成)
-* 后面再补充...
+* SSG, SSR 页面，SEO 更好一些
+* ISR(增量静态生成)，基于上一条
 
 ## TODO
-1. [ ] images 待优化
+1. [ ] Responsive images 待优化 （待考虑）
 2. [ ] ISR 待补充
 3. [ ] 点赞功能
 4. [ ] 文章搜索

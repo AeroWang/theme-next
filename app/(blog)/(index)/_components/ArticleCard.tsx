@@ -1,11 +1,11 @@
 import type { ListedPostVo } from '@halo-dev/api-client'
 import Link from 'next/link'
-import AImage from '#/app/_components/AImage'
 import IconTimeCircle from '#/app/_components/SvgIcons/IconTimeCircle'
 import { dayjsPlugin } from '#/app/_lib'
 import { dayjsRelativeTime } from '#/app/_utils'
 import IconHeart from '#/app/_components/SvgIcons/IconHeart'
 import IconEye from '#/app/_components/SvgIcons/IconEye'
+import AImage from '#/app/_components/AImage'
 
 type Props = {
   article: ListedPostVo
@@ -17,12 +17,7 @@ const ArticleCard = ({ article }: Props) => {
         href={`/p/${article.metadata.name}/${article.spec?.slug}`}
         className={'h-full w-full overflow-hidden sm:flex'}>
         {article.spec?.cover ? (
-          <AImage
-            src={article.spec.cover}
-            alt={`coverImage`}
-            heightClass={'h-40 sm:h-48'}
-            widthClass={'w-full sm:w-[30rem]'}
-          />
+          <AImage src={article.spec.cover} alt={`coverImage`} className={'h-40 w-full sm:h-48 sm:w-[30rem]'} />
         ) : null}
         <div className={'content-info group flex w-full flex-col justify-between bg-gray-1 p-4 dark:bg-gray-11'}>
           <h1 className={'mb-3.5 line-clamp-1 text-lg font-semibold md:text-xl md:group-hover:text-primary'}>
