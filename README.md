@@ -77,7 +77,7 @@ STATIC_URL=https://a.example.com
 
 ## TODO
 1. [ ] Responsive images 待优化 （待考虑）
-2. [ ] ISR 待补充
+2. [x] ISR 待补充
 3. [ ] 点赞功能
 4. [ ] 文章搜索
 5. [ ] 站点数据统计及相关区域展示
