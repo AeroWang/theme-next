@@ -47,6 +47,7 @@
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "@types/url-parse": "^1.4.8",
+    "@vercel/analytics": "^1.0.1",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.9",
     "eslint-config-prettier": "^8.8.0",

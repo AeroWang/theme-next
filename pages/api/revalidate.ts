@@ -10,8 +10,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // This should be the actual path not a rewritten path
     // e.g. for "/blog/[slug]" this should be "/blog/post-1"
     console.log(`[Next.js] Revalidating ${req.query.path}`)
-    const resRe = await res.revalidate(<string>req.query.path || '/')
-    console.log('reRes', resRe)
+    await res.revalidate(<string>req.query.path || '/')
+    console.log('Revalidating success', `${req.query.path || '/'}`)
     return res.json({ revalidated: true })
   } catch (err) {
     console.log(err)

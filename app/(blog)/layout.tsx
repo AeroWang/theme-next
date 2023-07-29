@@ -4,6 +4,7 @@ import { ThemesProvider } from '#/app/_components/Providers/ThemesProvider'
 import GlobalScrollProvider from '#/app/_components/Providers/GlobalScrollProvider'
 import GlobalSizeProvider from '#/app/_components/Providers/GlobalSizeProvider'
 import GlobalFooter from '#/app/(blog)/_components/GlobalFooter'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata = {
   title: {
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </GlobalSizeProvider>
           </GlobalScrollProvider>
         </ThemesProvider>
+        {process.env.NODE_ENV === 'production' ? <Analytics /> : null}
       </body>
     </html>
   )
