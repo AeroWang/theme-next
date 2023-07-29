@@ -44,7 +44,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/lodash-es": "^4.17.8",
     "@types/node": "20.4.2",
-    "@types/react": "18.2.14",
+    "@types/react": "18.2.17",
     "@types/react-dom": "18.2.6",
     "@types/url-parse": "^1.4.8",
     "@vercel/analytics": "^1.0.1",
