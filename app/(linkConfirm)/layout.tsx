@@ -14,7 +14,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning lang="zh" className={'h-full'}>
       <body className={styles.body}>
-        <ThemesProvider>{children}</ThemesProvider>
+        <ThemesProvider defaultTheme={'dark'} enableSystem={false}>
+          {children}
+        </ThemesProvider>
       </body>
     </html>
   )
