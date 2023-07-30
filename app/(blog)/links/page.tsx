@@ -32,7 +32,7 @@ const LinkTeam = async ({ teamItem }: { teamItem: LinkGroup }) => {
             />
             <div className={'relative ml-5 flex h-full flex-1 flex-col justify-evenly'}>
               <div className={'name text-sm font-semibold md:text-base'}>{link.spec.displayName}</div>
-              <div className={'desc line-clamp-1 text-xs text-gray-7 md:text-sm'}>{link.spec.description}</div>
+              <div className={'desc line-clamp-2 text-xs text-gray-7 md:text-sm'}>{link.spec.description}</div>
             </div>
           </Link>
         ))}
