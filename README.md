@@ -2,11 +2,11 @@
 
 一款使用了 [Halo](https://github.com/halo-dev/halo) v2.7.0 API接口服务的博客主题
 
+API接口你懂得吧👀
+
 预览图待定，可以先去 <a href="https://theme-next-git-dev-gotoobe.vercel.app" target="_blank">开发预览地址</a> 瞧一瞧
 
 ## 说明
-
-目前正处于开发阶段，<a href="https://theme-next-git-dev-gotoobe.vercel.app" target="_blank">开发预览地址</a>
 
 该主题使用 [Next.js](https://nextjs.org/) 创建。
 
@@ -20,7 +20,7 @@
 
 ## 部署
 
-`.env.local` 文件存储了一些环境变量，并未上传到仓库中，请自行创建补充
+`.env.local` 文件存储了一些环境变量，并未上传到仓库中，请自行补充
 
 ```text
 # ISR 重新验证 TOKEN
@@ -51,7 +51,16 @@ STATIC_URL=https://a.example.com
 
    也可以先看看官方文档介绍，https://nextjs.org/docs/app/building-your-application/deploying#docker-image
 
-   详细后续补充...
+   使用此方式需修改配置文件
+  ```js
+  // next.config.js
+  module.exports = {
+    // ... 其它配置.
+    output: 'standalone',
+  }
+  ```
+
+   docker 构建部署时如果要使用内网 IP 仍存在问题，暂时解决办法是使用实际域名，`.env.production` 中的 `HALO_HOST` 替换为实际域名
 
 * 静态导出并部署
   这种方式会缺失 Next.js 的许多功能及优化，目前不建议也不提供此方式的部署方案，感兴趣的可以自己去研究一下
@@ -74,6 +83,12 @@ STATIC_URL=https://a.example.com
 * 更现代化？因人而异吧
 * SSG, SSR 页面，SEO 更好一些
 * ISR(增量静态生成)，基于上一条
+  ```
+  example:
+    http://localhost:3000 -> host
+    验证首页 http://localhost:3000/api/revalidate?secret=<HALO_REVALIDATE_TOKEN>&path=/
+    验证关于页 http://localhost:3000/api/revalidate?secret=<HALO_REVALIDATE_TOKEN>&path=/about
+  ```
 
 ## TODO
 1. [ ] Responsive images 待优化 （待考虑）

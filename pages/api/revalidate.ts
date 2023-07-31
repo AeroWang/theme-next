@@ -24,5 +24,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
  * example:
  * http://localhost:3000 -> host
  * 验证首页 http://localhost:3000/api/revalidate?secret=revalidate_token&path=/
- * 其他页面 http://localhost:3000/api/revalidate?secret=revalidate_token&path=/links,/about
+ * 验证关于页 http://localhost:3000/api/revalidate?secret=revalidate_token&path=/about
  */
