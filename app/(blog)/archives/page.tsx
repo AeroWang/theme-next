@@ -4,6 +4,7 @@ import TimelineCard from '#/app/(blog)/archives/_components/timelineCard'
 
 export const metadata = {
   title: '归档',
+  description: '归档页面描述',
 }
 const skeletonNum = lodash.range(5)
 const Page = async () => {
