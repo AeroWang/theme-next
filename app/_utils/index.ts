@@ -19,3 +19,12 @@ export const addDelay = async (delayTime?: number) => {
     setTimeout(() => resolve('success'), delayTime ?? 1000)
   })
 }
+
+/**
+ * random
+ *
+ * 包含 min ,不包含 max
+ * @param min
+ * @param max
+ */
+export const random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min

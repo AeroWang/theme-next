@@ -9,12 +9,13 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import type { Node as HastNode } from 'hast-util-to-string'
 import { h } from 'hastscript'
+import Sparkles from '#/app/_components/Sparkles'
 
 const components = {
-  // TODO: CustomSimpleMDX ? 未生效
   a: (props: AnchorHTMLAttributes<HTMLElement>) => {
     return <CustomLink props={props} />
   },
+  Sparkles,
 }
 
 export const CustomMDX = async (originalContent: string, props?: MDXRemoteProps) => {

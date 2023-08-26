@@ -24,6 +24,16 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      keyframes: {
+        sparkleGrowAndShrink: {
+          '0%, 100%': { transform: 'scale(0)' },
+          '50%': { transform: 'scale(1)' },
+        },
+        sparkleSpin: {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(180deg)' },
+        },
+      },
     },
   },
   corePlugins: {
