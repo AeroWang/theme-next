@@ -29,16 +29,16 @@ const SingleSparkle = ({ size, style }: TSparkleConfig) => {
   )
 }
 
-const DEFAULT_COLOR = '#554eff'
-const generateSparkleConfig = (color = DEFAULT_COLOR): Required<TSparkleConfig> => {
+const generateSparkleConfig = (preferredReducedMotion = false): Required<TSparkleConfig> => {
+  // TODO: 颜色在自定义颜色列表中随机 ?
   return {
     id: String(random(10000, 99999)),
     createdAt: Date.now(),
-    size: random(10, 20),
+    size: random(15, 24),
     style: {
-      top: random(-15, 70) + '%',
-      left: random(-15, 70) + '%',
-      zIndex: random(9, 11),
+      top: random(-25, 55) + '%',
+      left: random(-15, 85) + '%',
+      zIndex: preferredReducedMotion ? 9 : random(9, 13),
     },
   }
 }
@@ -49,7 +49,7 @@ const Sparkles = ({ children }: { children: React.ReactNode }) => {
   const preferredReducedMotion = usePreferredReducedMotion()
   // 保证 prefers-reduced-motion: reduce 时仍然展示，默认初始化 3 个，，但是无动画的
   useEffect(() => {
-    if (preferredReducedMotion) setSparkles(lodash.range(3).map(() => generateSparkleConfig(DEFAULT_COLOR)))
+    if (preferredReducedMotion) setSparkles(lodash.range(3).map(() => generateSparkleConfig(true)))
   }, [preferredReducedMotion])
 
   // TODO: 仅当元素出现在可视区域时再开始动画
@@ -72,7 +72,8 @@ const Sparkles = ({ children }: { children: React.ReactNode }) => {
       {sparkles.map((sparkle) => (
         <SingleSparkle key={sparkle.id} size={sparkle.size} style={sparkle.style} />
       ))}
-      <strong className={'bold relative z-10'}>{children}</strong>
+      {/* TODO: 不应局限于加粗文本 */}
+      <span className={'bold relative z-10'}>{children}</span>
     </span>
   )
 }
