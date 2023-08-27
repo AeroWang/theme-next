@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
+import { isBrowser } from '#/app/_utils'
 
 const QUERY_STR = '(prefers-reduced-motion: no-preference)'
-const isRenderingOnServer = typeof window === 'undefined'
+const isRenderingOnServer = !isBrowser()
 const getInitialState = () => {
   return isRenderingOnServer ? true : !window.matchMedia(QUERY_STR).matches
 }

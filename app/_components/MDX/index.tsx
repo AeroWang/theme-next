@@ -1,7 +1,7 @@
 import { AnchorHTMLAttributes } from 'react'
 import { compileMDX, MDXRemote } from 'next-mdx-remote/rsc'
 import { MDXRemoteProps } from 'next-mdx-remote/dist/rsc'
-import CustomLink from '#/app/_components/MDX/CustomLink'
+import CustomLink from '#/app/_components/MDX/components/CustomLink'
 import remarkGfm from 'remark-gfm'
 // import rehypePresetMinify from 'rehype-preset-minify'
 import rehypePrism from 'rehype-prism-plus'
@@ -9,7 +9,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import type { Node as HastNode } from 'hast-util-to-string'
 import { h } from 'hastscript'
-import Sparkles from '#/app/_components/Sparkles'
+import Sparkles from '#/app/_components/MDX/components/Sparkles'
 
 const components = {
   a: (props: AnchorHTMLAttributes<HTMLElement>) => {

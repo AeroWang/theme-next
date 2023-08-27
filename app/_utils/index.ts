@@ -28,3 +28,7 @@ export const addDelay = async (delayTime?: number) => {
  * @param max
  */
 export const random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min
+
+export const isBrowser = () => {
+  return !!(typeof window !== 'undefined' && window.document && window.document.createElement)
+}

@@ -1,4 +1,3 @@
-'use client'
 import { random } from '#/app/_utils'
 import { useCallback, useEffect, useRef } from 'react'
 
