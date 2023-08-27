@@ -36,10 +36,10 @@ const generateSparkleConfig: TGenerateSparkleConfig = (preferredReducedMotion = 
   return {
     id: String(random(10000, 99999)),
     createdAt: Date.now(),
-    size: random(10, 16),
+    size: random(10, 17),
     style: {
       color: randomColorList.length ? randomColorList[random(0, randomColorList.length)] : undefined,
-      top: random(-15, 55) + '%',
+      top: random(-15, 60) + '%',
       left: random(0, 85) + '%',
       zIndex: preferredReducedMotion ? 9 : random(9, 12),
     },
@@ -70,8 +70,8 @@ const Sparkles = ({ randomColorList, children }: { randomColorList?: string[]; c
       nextSparkles.push(sparkle)
       setSparkles(nextSparkles)
     },
-    preferredReducedMotion ? null : inViewport ? (clickedSparkles ? null : 300) : null,
-    800,
+    preferredReducedMotion ? null : inViewport ? (clickedSparkles ? null : 150) : null,
+    600,
   )
 
   const onClickSparkles = () => {
