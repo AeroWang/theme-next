@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { CustomMDX } from '#/app/_components/MDX'
 
 export const metadata = {
-  title: '关于',
+  title: '关于'
 }
 
 const Page = async () => {

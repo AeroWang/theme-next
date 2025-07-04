@@ -5,10 +5,11 @@ import { CustomMDX } from '#/app/_components/MDX'
 import '#/app/assets/style/prism-one-dark.css'
 
 type Props = {
-  params: { slug: string[] }
+  params: Promise<{ slug: string[] }>
 }
 
-const Page = async ({ params }: Props) => {
+const Page = async (props: Props) => {
+  const params = await props.params;
   const postRes = await getPostByMetaName(params.slug[0])
   if (!postRes?.spec) notFound()
   // 暂时兜底

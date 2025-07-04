@@ -6,7 +6,7 @@ import ArticleCard from '#/app/(blog)/(index)/_components/ArticleCard'
 import { Pagination } from '#/app/(blog)/_components/Pagination'
 
 type Props = {
-  params: { pageNum: number }
+  params: Promise<{ pageNum: number }>
 }
 
 export async function generateStaticParams() {
@@ -18,7 +18,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
   const posts = await getPosts({ page: params.pageNum, sort: ['spec.publishTime', 'desc'] })
   if (!posts || !posts.items.length) notFound()
   const paginationData = lodash.omit(posts, 'items')

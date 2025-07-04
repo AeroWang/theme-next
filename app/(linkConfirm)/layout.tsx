@@ -7,7 +7,7 @@ export const metadata = {
   title: {
     default: 'Aero',
     template: '%s - Aero',
-  },
+  }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

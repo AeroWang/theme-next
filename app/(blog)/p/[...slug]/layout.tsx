@@ -7,7 +7,7 @@ import style from './article.module.css'
 import clsx from 'clsx'
 
 type Props = {
-  params: { slug: string[] }
+  params: Promise<{ slug: string[] }>
 }
 
 export async function generateStaticParams(): Promise<Props['params'][]> {
@@ -19,7 +19,8 @@ export async function generateStaticParams(): Promise<Props['params'][]> {
   }))
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const postRes = await getPostByMetaName(params.slug[0])
   // if (!postRes?.spec) notFound()
   // 每篇文章 seo 信息，暂定
@@ -34,7 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default async function ArticleLayout({ params, children }: Props & { children: React.ReactNode }) {
+export default async function ArticleLayout(props: Props & { children: React.ReactNode }) {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   // if (params.slug.length < 2) notFound()
   const postRes = await getPostByMetaName(params.slug[0])
   if (!postRes?.spec) notFound()

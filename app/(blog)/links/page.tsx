@@ -5,7 +5,7 @@ import Link from 'next/link'
 import AImage from '../../_components/AImage'
 
 export const metadata = {
-  title: '友链',
+  title: '友链'
 }
 
 const LinkTeam = async ({ teamItem }: { teamItem: LinkGroup }) => {
